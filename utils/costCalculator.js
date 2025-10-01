@@ -1,7 +1,5 @@
 import distances from "../data/distances.js";
 
-// Cost slabs per weight
-// 0-5kg: 10 per unit distance, every extra 5kg: +8 per unit distance
 
 export function calculateRouteCost(route, weightMap) {
   let totalCost = 0;
@@ -12,7 +10,6 @@ export function calculateRouteCost(route, weightMap) {
 
     const distance = distances[from][to] || 0;
 
-    // Weight carried on this leg
     let weight = 0;
     if (from !== "L1") weight = weightMap[from] || 0;
 
